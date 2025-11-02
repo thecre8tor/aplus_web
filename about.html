@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APlus Drivers - About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/stylesheet/about.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <a href="./index.html" class="logo">
+            <img src="assets/images/aplus_logo.svg" width="138" />
+          </a>
+
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+          </ul>
+
+          <!-- <--! Mobile Navigation -->
+
+          <a href="./contact_us.html" class="nav-btn">Contact Us</a>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Hero section -->
+      <section class="hero container">
+        <div class="hero-left">
+          <h1>About APlus</h1>
+          <p>
+            APlus Drivers is a fast-growing driver outsourcing company committed
+            to delivering reliable, professional, and well-trained drivers to
+            individuals, families, and businesses across Lagos, Nigeria.
+          </p>
+          <p>
+            We specialize in meeting the unique mobility needs of both personal
+            and corporate clients, from daily commutes and school runs to
+            executive transport and long-term driver placements.
+          </p>
+          <p>
+            At APlus Drivers, we don’t just assign drivers. We prioritize
+            safety, professionalism, and peace of mind every step of the way.
+          </p>
+          <p>Experience dependable service. Try APlus Drivers today!</p>
+          <a href="#contact" class="btn">Contact Us →</a>
+        </div>
+        <div class="hero-right">
+          <div class="hero-right-child first">
+            <img
+              src="./assets/images/about_1.png"
+              alt="about image 1"
+              width="343"
+            />
+            <img
+              src="./assets/images/about_2.png"
+              alt="about image 2"
+              width="343"
+            />
+          </div>
+          <div class="hero-right-child">
+            <img
+              src="./assets/images/about_3.png"
+              alt="about image 3"
+              width="350"
+            />
+            <img
+              src="./assets/images/about_4.png"
+              alt="about image 4"
+              width="350"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Leadership Team -->
+      <section class="container team">
+        <h2>Meet Our Team</h2>
+
+        <div class="team-leaders">
+          <div class="team-leader-card" data-modal="michael-akpan">
+            <img
+              src="./assets/images/michael_akpan.png"
+              alt=""
+              style="width: 100%"
+            />
+            <div class="team-leader-info">
+              <h3>Michael Akpan</h3>
+              <p>Founder and CEO</p>
+            </div>
+          </div>
+          <div class="team-leader-card" data-modal="tobi-amida">
+            <img
+              src="./assets/images/tobi_amida.png"
+              alt=""
+              style="width: 100%"
+            />
+            <div class="team-leader-info">
+              <h3>Tobi Amida</h3>
+              <p>Board Chairman</p>
+            </div>
+          </div>
+        </div>
+        <!-- <h2>Meet Our Advisory Board</h2>
+        <div class="team-leaders">
+          <div class="team-leader-card" data-modal="tobi-amida">
+            <img
+              src="./assets/images/tobi_amida.png"
+              alt=""
+              style="width: 100%"
+            />
+            <div class="team-leader-info">
+              <h3>Tobi Amida</h3>
+              <p>Board Chairman</p>
+            </div>
+          </div>
+          <div class="team-leader-card">
+            <img src="./assets/images/brown.png" alt="" style="width: 100%" />
+            <div class="team-leader-info">
+              <h3>Adedayo Oludeji</h3>
+              <p>Finance Director / Company Secretary</p>
+            </div>
+          </div>
+          <div class="team-leader-card">
+            <img src="./assets/images/grey.png" alt="" style="width: 100%" />
+            <div class="team-leader-info">
+              <h3>Adedayo Oludeji</h3>
+              <p>Finance Director / Company Secretary</p>
+            </div>
+          </div>
+        </div> -->
+      </section>
+      <section class="container stats">
+        <div class="stat">
+          <h4>10+</h4>
+          <p>
+            Years of Ride <br />
+            hailing services
+          </p>
+        </div>
+        <div class="stat-even">
+          <h4>100+</h4>
+          <p>
+            Experienced & <br />
+            Happy Drivers
+          </p>
+        </div>
+        <div class="stat">
+          <h4>10+</h4>
+          <p>
+            Years of Ride <br />
+            hailing services
+          </p>
+        </div>
+        <div class="stat-even">
+          <h4>50+</h4>
+          <p>Cities Served</p>
+        </div>
+      </section>
+    </main>
+    <div id="profile-modal" class="profile-modal">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content" id="modalContent">
+        <div class="modal-header">
+          <button class="modal-close" id="modalClose">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Dynamic content loaded here -->
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <img
+              src="assets/images/aplus_logo.svg"
+              width="138"
+              style="margin-bottom: 40px"
+            />
+            <p>
+              APlus Drivers, Third Floor, 55 Bode Thomas, Surulere, Yaba, Lagos
+            </p>
+            <div class="social-links">
+              <a href="#"><img src="./assets/images/ig.svg" alt="ig icon" /></a>
+              <a href="#"><img src="./assets/images/fb.svg" alt="fb icon" /></a>
+              <a href="#"><img src="./assets/images/yt.svg" alt="yt icon" /></a>
+              <a href="#"><img src="./assets/images/x.svg" alt="x icon" /></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Our Services</h3>
+            <ul>
+              <li><a href="#">Solo Rides</a></li>
+              <li><a href="#">Trip Pickup Services</a></li>
+              <li><a href="#">Corporate Hirings</a></li>
+              <li><a href="#">Solo Tours</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Info@aplusdrivers.com</p>
+            <p>+234 811 2401 245</p>
+          </div>
+          <div class="footer-section">
+            <h4 style="color: #000; padding-bottom: 16px">
+              Signup for Newsletter
+            </h4>
+            <p>
+              Sign up to our mailing list to find out more information and keep
+              up to date about our activities
+            </p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter email" />
+              <div>
+                <button
+                  style="
+                    text-decoration: none;
+                    background-color: #b2272d;
+                    border: none;
+                    padding: 16px 33px;
+                    border-radius: 10px;
+                    color: white;
+                    font-weight: 500;
+                  "
+                >
+                  Subscribe →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/javascript/main.js"></script>
+  </body>
+</html>

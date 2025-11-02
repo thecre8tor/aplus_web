@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APlus Drivers - Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/stylesheet/services.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <a href="./index.html" class="logo">
+            <img src="assets/images/aplus_logo.svg" width="138" />
+          </a>
+
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <li><a href="./pricing.html">Pricing</a></li>
+          </ul>
+
+          <!-- <--! Mobile Navigation -->
+
+          <a href="./contact_us.html" class="nav-btn">Contact Us</a>
+
+          <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>APlus Services</h1>
+              <p>
+                At APlus Drivers, we offer a premium private car hire service,
+                backed by a team of highly trained drivers committed to meeting
+                your expectations.
+              </p>
+              <p>
+                Our chauffeurs ensure you arrive safely and punctually at your
+                destination — driving your vehicle with the utmost care. With
+                years of experience handling executive cars, our drivers treat
+                your car with the same respect and attention you do.
+              </p>
+              <div class="hero-btn-container">
+                <a
+                  href="https://wa.me/2348112401245"
+                  class="hero-btn"
+                  style="background-color: #25d366"
+                >
+                  <img
+                    src="./assets/images/whatsapp.svg"
+                    alt="whatsapp icon"
+                    width="24"
+                  />
+                  <p>Whatsapp</p>
+                </a>
+                <a
+                  href="mailto:Info@aplusdrivers.com"
+                  class="hero-btn"
+                  style="background-color: #e53e3e"
+                >
+                  <img
+                    src="./assets/images/mail.svg"
+                    alt="mail icon"
+                    width="24"
+                  />
+                  <p>Mail</p>
+                </a>
+              </div>
+            </div>
+            <div class="hero-form">
+              <h3>Book a Driver</h3>
+              <p>
+                Please complete the details below, then click on Submit and we
+                will be in touch
+              </p>
+              <form id="bookingForm">
+                <div class="form-group">
+                  <label for="name" style="font-size: 12px">Name*</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Name*"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email" style="font-size: 12px">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone" style="font-size: 12px"
+                      >Phone Number*</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      placeholder="Phone Number*"
+                    />
+                  </div>
+                </div>
+                <div style="margin-bottom: 13px">
+                  <div class="form-group">
+                    <p style="font-size: 16px; font-weight: 500">I need a</p>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      gap: 12px;
+                      align-items: center;
+                      margin-bottom: 13px;
+                    "
+                  >
+                    <input
+                      type="radio"
+                      name="driverType"
+                      value="single_trip"
+                      style="accent-color: #e53e3e"
+                      checked
+                    />
+                    <p style="font-size: 16px; font-weight: 500">
+                      Driver for a single trip
+                    </p>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      gap: 12px;
+                      align-items: center;
+                      margin-bottom: 13px;
+                    "
+                  >
+                    <input
+                      type="radio"
+                      name="driverType"
+                      value="personal"
+                      style="accent-color: #e53e3e"
+                    />
+                    <p style="font-size: 16px; font-weight: 500">
+                      Personal driver
+                    </p>
+                  </div>
+                  <div style="display: flex; gap: 12px; align-items: center">
+                    <input
+                      type="radio"
+                      name="driverType"
+                      value="corporate"
+                      style="accent-color: #e53e3e"
+                    />
+                    <p style="font-size: 16px; font-weight: 500">
+                      Corporate driver for my business
+                    </p>
+                  </div>
+                </div>
+                <div class="form-row single-trip-fields">
+                  <div style="display: flex; gap: 16px">
+                    <div class="form-group" style="width: 50%">
+                      <label for="pickupDate" style="font-size: 12px"
+                        >Pickup Date*</label
+                      >
+                      <input
+                        type="date"
+                        id="pickupDate"
+                        name="pickupDate"
+                        required
+                        placeholder="Pickup Date*"
+                      />
+                    </div>
+                    <div class="form-group" style="width: 50%">
+                      <label for="pickupTime" style="font-size: 12px"
+                        >Pickup Time*</label
+                      >
+                      <input
+                        type="time"
+                        id="pickupTime"
+                        name="pickupTime"
+                        style="width: 100%"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row single-trip-fields">
+                  <div class="form-group">
+                    <label for="pickupLocation" style="font-size: 12px"
+                      >Pickup Location*</label
+                    >
+                    <input
+                      type="text"
+                      id="pickupLocation"
+                      name="pickupLocation"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="dropoffLocation" style="font-size: 12px"
+                      >Dropoff Location*</label
+                    >
+                    <input
+                      type="text"
+                      id="dropoffLocation"
+                      name="dropoffLocation"
+                      required
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn"
+                  style="width: 40%; margin-top: 1rem"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./assets/images/services-mobile-hero.png"
+          alt="Mobile Hero Image"
+          class="mobile-hero-img"
+        />
+        <div class="hero-mobile-form">
+          <h3>Book a Driver</h3>
+          <p>
+            Please complete the details below, then click on Submit and we will
+            be in touch
+          </p>
+          <form id="bookingFormMobile">
+            <div class="form-group">
+              <label for="nameMobile" style="font-size: 12px">Name*</label>
+              <input
+                type="text"
+                id="nameMobile"
+                name="name"
+                required
+                placeholder="Name*"
+              />
+            </div>
+            <div class="form-group">
+              <label for="emailMobile" style="font-size: 12px">Email</label>
+              <input
+                type="email"
+                id="emailMobile"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phoneMobile" style="font-size: 12px"
+                >Phone Number*</label
+              >
+              <input
+                type="tel"
+                id="phoneMobile"
+                name="phone"
+                required
+                placeholder="Phone Number*"
+              />
+            </div>
+            <div style="margin-bottom: 13px">
+              <div class="form-group">
+                <p style="font-size: 16px; font-weight: 500">I need a</p>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  align-items: center;
+                  margin-bottom: 13px;
+                "
+              >
+                <input
+                  type="radio"
+                  name="driverType"
+                  value="single_trip"
+                  style="accent-color: #e53e3e"
+                  checked
+                />
+                <p style="font-size: 16px; font-weight: 500">
+                  Driver for a single trip
+                </p>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  align-items: center;
+                  margin-bottom: 13px;
+                "
+              >
+                <input
+                  type="radio"
+                  name="driverType"
+                  value="personal"
+                  style="accent-color: #e53e3e"
+                />
+                <p style="font-size: 16px; font-weight: 500">Personal driver</p>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: center">
+                <input
+                  type="radio"
+                  name="driverType"
+                  value="corporate"
+                  style="accent-color: #e53e3e"
+                />
+                <p style="font-size: 16px; font-weight: 500">
+                  Corporate driver for my business
+                </p>
+              </div>
+            </div>
+            <div class="form-row single-trip-fields">
+              <div style="display: flex; gap: 16px" class="custom-form-row">
+                <div class="form-group">
+                  <label for="pickupDateMobile" style="font-size: 12px"
+                    >Pickup Date*</label
+                  >
+                  <input
+                    type="date"
+                    id="pickupDateMobile"
+                    name="pickupDate"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pickupTimeMobile" style="font-size: 12px"
+                    >Pickup Time*</label
+                  >
+                  <input
+                    type="time"
+                    id="pickupTimeMobile"
+                    name="pickupTime"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-row single-trip-fields">
+              <div class="form-group">
+                <label for="pickupLocationMobile" style="font-size: 12px"
+                  >Pickup Location*</label
+                >
+                <input
+                  type="text"
+                  id="pickupLocationMobile"
+                  name="pickupLocation"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="dropoffLocationMobile" style="font-size: 12px"
+                  >Dropoff Location*</label
+                >
+                <input
+                  type="text"
+                  id="dropoffLocationMobile"
+                  name="dropoffLocation"
+                  required
+                />
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="btn"
+              style="width: 40%; margin-top: 1rem; font-weight: 500"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section class="services-section">
+        <div class="container">
+          <img
+            src="./assets/images/services-mobile-hero.png"
+            alt="Mobile Hero Image"
+            class="mobile-hero-img"
+          />
+          <div class="hero-mobile-form">
+            <h3>Book a Driver</h3>
+            <p>
+              Please complete the details below, then click on Submit and we
+              will be in touch
+            </p>
+            <form id="bookingForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Name*"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="Phone Number*"
+                />
+              </div>
+              <div style="margin-bottom: 13px">
+                <div class="form-group">
+                  <p style="font-size: 16px; font-weight: 500">I need a</p>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                    margin-bottom: 13px;
+                  "
+                >
+                  <input type="radio" style="accent-color: #e53e3e" />
+                  <p style="font-size: 16px; font-weight: 500">
+                    Driver for a single trip
+                  </p>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                    margin-bottom: 13px;
+                  "
+                >
+                  <input type="radio" style="accent-color: #e53e3e" />
+                  <p style="font-size: 16px; font-weight: 500">
+                    Personal driver
+                  </p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center">
+                  <input type="radio" style="accent-color: #e53e3e" />
+                  <p style="font-size: 16px; font-weight: 500">
+                    Corporate driver for my business
+                  </p>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn"
+                style="width: 40%; margin-top: 1rem"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div class="services-text">
+            <h2>Enjoy Every Moment — We'll Drive You Home.</h2>
+            <p class="service-text-web">
+              When you're out celebrating at a party, event, or special
+              occasion, the last thing you should worry about is driving home.
+              With Safe Driver, you can focus on the fun while we take care of
+              the ride. We provide reliable, responsible drivers to chauffeur
+              you safely to and from any gathering — whether it's a night out, a
+              sporting event, or a private function. Let us handle the road so
+              you can enjoy a stress-free experience from start to finish.
+            </p>
+            <p class="service-text-mobile">
+              We're committed to providing the best ride experience with
+              unmatched service quality.
+            </p>
+          </div>
+          <div class="services-grid">
+            <div
+              class="service-card"
+              style="
+                background-image: url('./assets/images/pickup_image.png');
+                background-size: cover;
+                background-position: center;
+              "
+            >
+              <div class="service-content">
+                <img src="./assets/images/pick_up.svg" alt="" width="50" />
+                <h3>Pickup/Drop-off</h3>
+                <p style="color: #fff; text-align: left">
+                  Whether it's a quick trip across town or a daily commute, our
+                  drivers ensure you get to your destination safely and on time.
+                </p>
+              </div>
+            </div>
+            <div
+              class="service-card"
+              style="
+                background-image: url('./assets/images/trip_scheduling_image.png');
+                background-size: cover;
+                background-position: center;
+              "
+            >
+              <div class="service-content">
+                <img
+                  src="./assets/images/trip_scheduling.svg"
+                  alt=""
+                  width="45"
+                />
+                <h3>Trip Scheduling</h3>
+                <p style="color: #fff; text-align: left">
+                  Plan your rides ahead of time. Book a driver for errands,
+                  meetings, airport runs, or full-day engagements — we work
+                  around your schedule.
+                </p>
+              </div>
+            </div>
+            <div
+              class="service-card"
+              style="
+                background-image: url('./assets/images/corporate_drivers_image.png');
+                background-size: cover;
+                background-position: center;
+              "
+            >
+              <div class="service-content">
+                <img
+                  src="./assets/images/trip_scheduling.svg"
+                  alt=""
+                  width="45"
+                />
+                <h3>Corporate Drivers</h3>
+                <p style="color: #fff; text-align: left">
+                  Hire trained, professional drivers for your executives, staff,
+                  or company vehicles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section class="how-it-works container">
+        <h2>How APlus Drivers Works?</h2>
+        <p>
+          Experience seamless transportation with our three-step process
+          designed for your <br />
+          comfort and safety.
+        </p>
+        <div class="hiw-grid">
+          <div class="hiw-grid-item">
+            <img
+              src="./assets/images/book-driver.svg"
+              alt="book driver icon"
+              width="100"
+              height="100"
+            />
+
+            <h4>Book your Aplus driver</h4>
+            <img src="./assets/images/divider.svg" alt="divider" />
+            <p>
+              Reach out via phone or our booking form to enjoy the service of a
+              professional, well-trained driver.
+            </p>
+          </div>
+          <div class="hiw-grid-item">
+            <img
+              src="./assets/images/driver-arrives.svg"
+              alt="driver arrives icon"
+              width="100"
+              height="100"
+            />
+
+            <h4>Book your Aplus driver</h4>
+            <img src="./assets/images/divider.svg" alt="divider" />
+            <p>
+              Reach out via phone or our booking form to enjoy the service of a
+              professional, well-trained driver.
+            </p>
+          </div>
+          <div class="hiw-grid-item">
+            <img
+              src="./assets/images/relax.svg"
+              alt="relax icon"
+              width="100"
+              height="100"
+            />
+
+            <h4>Book your Aplus driver</h4>
+            <img src="./assets/images/divider.svg" alt="divider" />
+            <p>
+              Reach out via phone or our booking form to enjoy the service of a
+              professional, well-trained driver.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Book A Driver -->
+      <section class="why-book">
+        <div class="container why-book-container">
+          <div class="why-book-img">
+            <img
+              src="./assets/images/why-book-img.png"
+              alt=""
+              style="width: 100%"
+            />
+          </div>
+          <div class="why-book-text">
+            <h3>Why Book a Driver with APlus</h3>
+            <p>
+              We're building the future of urban mobility with safe, reliable,
+              and affordable ride hailing services that connect people and
+              communities across the globe.
+            </p>
+            <div class="why-book-points">
+              <div class="why-book-point">
+                <img
+                  src="./assets/images/checkmark.svg"
+                  alt="checkmark"
+                  width="40"
+                />
+
+                <p>
+                  Sit back and relax, enjoy the every drive of ours with zero
+                  tension.
+                </p>
+              </div>
+              <div class="why-book-point">
+                <img
+                  src="./assets/images/checkmark.svg"
+                  alt="checkmark"
+                  width="40"
+                />
+
+                <p>
+                  One and only trustworthy and responsible professional drivers
+                  in Lagos with reasonable price rates.
+                </p>
+              </div>
+              <div class="why-book-point">
+                <img
+                  src="./assets/images/checkmark.svg"
+                  alt="checkmark"
+                  width="40"
+                />
+
+                <p>
+                  Avoids unwanted stress over unfamiliar locations or difficult
+                  parking
+                </p>
+              </div>
+              <div class="why-book-point">
+                <img
+                  src="./assets/images/checkmark.svg"
+                  alt="checkmark"
+                  width="40"
+                />
+
+                <p>
+                  Sit back and relax, enjoy the every drive of ours with zero
+                  tension.
+                </p>
+              </div>
+            </div>
+            <a href="#contact" class="btn">Contact Us →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <img
+              src="assets/images/aplus_logo.svg"
+              width="138"
+              style="margin-bottom: 40px"
+            />
+            <p>
+              APlus Drivers, Third Floor, 55 Bode Thomas, Surulere, Yaba, Lagos
+            </p>
+            <div class="social-links">
+              <a href="#"><img src="./assets/images/ig.svg" alt="ig icon" /></a>
+              <a href="#"><img src="./assets/images/fb.svg" alt="fb icon" /></a>
+              <a href="#"><img src="./assets/images/yt.svg" alt="yt icon" /></a>
+              <a href="#"><img src="./assets/images/x.svg" alt="x icon" /></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Explore</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Our Services</h3>
+            <ul>
+              <li><a href="#">Solo Rides</a></li>
+              <li><a href="#">Trip Pickup Services</a></li>
+              <li><a href="#">Corporate Hirings</a></li>
+              <li><a href="#">Solo Tours</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Info@aplusdrivers.com</p>
+            <p>+234 811 2401 245</p>
+          </div>
+          <div class="footer-section">
+            <h4 style="color: #000; padding-bottom: 16px">
+              Signup for Newsletter
+            </h4>
+            <p>
+              Sign up to our mailing list to find out more information and keep
+              up to date about our activities
+            </p>
+            <div class="newsletter-form">
+              <input type="email" placeholder="Enter email" />
+              <div>
+                <button
+                  style="
+                    text-decoration: none;
+                    background-color: #b2272d;
+                    border: none;
+                    padding: 16px 33px;
+                    border-radius: 10px;
+                    color: white;
+                    font-weight: 500;
+                  "
+                >
+                  Subscribe →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/javascript/main.js"></script>
+  </body>
+</html>

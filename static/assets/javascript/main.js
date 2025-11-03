@@ -158,7 +158,7 @@ function toggleSingleTripFields() {
 
 toggleSingleTripFields();
 
-document.querySelectorAll('input[name="driverType"]').forEach((radio) => {
+document.querySelectorAll('input[name="driver_type"]').forEach((radio) => {
   radio.addEventListener("change", (e) => {
     selectedDriverType = e.target.value;
     console.log("Updated driver type:", selectedDriverType);
@@ -179,9 +179,9 @@ function handleBookingSubmit(form) {
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    // data.driverType = selectedDriverType;
+    // data.driver_type = selectedDriverType;
 
-    if (!data.name || !data.phone || !data.driverType) {
+    if (!data.name || !data.phone || !data.driver_type) {
       alert(
         "Please fill in all required fields (Name, Phone, and Driver Type)."
       );
@@ -189,14 +189,14 @@ function handleBookingSubmit(form) {
     }
 
     if (
-      data.driverType === "Single Trip" ||
-      data.driverType === "Corporate Driver"
+      data.driver_type === "Single Trip" ||
+      data.driver_type === "Corporate Driver"
     ) {
       if (
-        !data.pickupDate ||
-        !data.pickupTime ||
-        !data.pickupLocation ||
-        !data.dropoffLocation
+        !data.pickup_date ||
+        !data.pickup_time ||
+        !data.pickup_location ||
+        !data.dropoff_location
       ) {
         alert(
           "Please fill in all required fields for a single trip (Pickup Date, Time, Location, and Dropoff Location)."
@@ -204,8 +204,6 @@ function handleBookingSubmit(form) {
         return;
       }
     }
-
-    console.log("Booking data:", data);
 
     try {
       const response = await fetch("/api/booking", {
@@ -287,7 +285,7 @@ document
 
 // Set minimum date for booking forms
 const today = new Date().toISOString().split("T")[0];
-const pickupDates = document.querySelectorAll("#pickupDate");
+const pickupDates = document.querySelectorAll("#pickup_date");
 pickupDates.forEach((dateInput) => {
   dateInput.setAttribute("min", today);
 });

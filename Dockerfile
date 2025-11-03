@@ -4,6 +4,10 @@ COPY . .
 RUN cargo build --release
 
 FROM debian:bookworm-slim
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
 # Copy binary and static assets

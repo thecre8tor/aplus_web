@@ -165,7 +165,6 @@ document.querySelectorAll('input[name="driver_type"]').forEach((radio) => {
 });
 
 function handleBookingSubmit(form) {
-  toggleSingleTripFields();
   if (!form) return;
 
   form.addEventListener("submit", async (e) => {

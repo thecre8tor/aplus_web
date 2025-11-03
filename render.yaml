@@ -1,10 +1,10 @@
 services:
-  - type: "web"
+  - type: web
     name: aplus
     runtime: static
-    buildCommand: "" # No build step for plain HTML
-    staticPublishPath: /dist # Serve files from repo root
-    branch: main # Branch to deploy from
+    buildCommand: npm run build
+    staticPublishPath: dist
+    branch: main
     routes:
       - type: rewrite
         source: /*

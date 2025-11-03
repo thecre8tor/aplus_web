@@ -1,11 +1,32 @@
-services:
-  - type: web
-    name: aplus
-    runtime: static
-    buildCommand: npm run build
-    staticPublishPath: dist
-    branch: main
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+# Exported from Render on 2025-11-03T09:47:28Z
+version: "1"
+projects:
+  - name: My project
+    environments:
+      - name: Production
+        services:
+          - type: web
+            name: aplus_web
+            runtime: static
+            repo: https://github.com/thecre8tor/aplus_web
+            envVars:
+              - key: VITE_MAILTRAP_BASE_URL
+                sync: false
+              - key: VITE_MAILTRAP_API_TOKEN
+                sync: false
+            staticPublishPath: dist
+            domains:
+              - www.aplusdrivers.ng
+              - aplusdrivers.ng
+            autoDeployTrigger: commit
+# services:
+#   - type: web
+#     name: aplus
+#     runtime: static
+#     buildCommand: npm run build
+#     staticPublishPath: dist
+#     branch: main
+#     routes:
+#       - type: rewrite
+#         source: /*
+#         destination: /index.html

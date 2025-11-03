@@ -171,14 +171,22 @@ function handleBookingSubmit(form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    // ✅ Disable button and show loader
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span class="loader"></span>`;
+
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    // data.driver_type = selectedDriverType;
 
     if (!data.name || !data.phone || !data.driver_type) {
       alert(
         "Please fill in all required fields (Name, Phone, and Driver Type)."
       );
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
       return;
     }
 
@@ -195,6 +203,8 @@ function handleBookingSubmit(form) {
         alert(
           "Please fill in all required fields for a single trip (Pickup Date, Time, Location, and Dropoff Location)."
         );
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
         return;
       }
     }
@@ -212,13 +222,17 @@ function handleBookingSubmit(form) {
         );
         form.reset();
         selectedDriverType = "Single Trip";
-        toggleSingleTripFields(); // if defined elsewhere
+        toggleSingleTripFields();
       } else {
         alert("There was an error submitting your booking. Please try again.");
       }
     } catch (error) {
       console.error("API error:", error);
       alert("There was a network error. Please try again.");
+    } finally {
+      // ✅ Re-enable button and restore original text
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
     }
   });
 }

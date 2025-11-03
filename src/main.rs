@@ -73,6 +73,7 @@ fn render_booking_email(booking: &Booking) -> (String, String) {
     let tera = Tera::new("templates/**/*").expect("Error loading templates");
 
     let mut context = Context::new();
+
     context.insert("name", &booking.name);
     context.insert("email", &booking.email);
     context.insert("phone", &booking.phone);
@@ -88,6 +89,7 @@ fn render_booking_email(booking: &Booking) -> (String, String) {
         .expect("Failed to render HTML email");
 
     let mut text = String::new();
+
     text.push_str("New Booking Request\n\n");
     text.push_str(&format!("Name: {}\n", booking.name));
     text.push_str(&format!("Phone: {}\n", booking.phone));
@@ -96,6 +98,7 @@ fn render_booking_email(booking: &Booking) -> (String, String) {
         booking.email.as_deref().unwrap_or("—")
     ));
     text.push_str(&format!("Driver Type: {}\n", booking.driver_type));
+
     if let Some(d) = &booking.pickup_date {
         text.push_str(&format!("Pickup Date: {}\n", d));
     }
@@ -108,6 +111,7 @@ fn render_booking_email(booking: &Booking) -> (String, String) {
     if let Some(d) = &booking.dropoff_location {
         text.push_str(&format!("Dropoff Location: {}\n", d));
     }
+
     text.push_str("\nPlease follow up with the customer.\n");
 
     (text, html)

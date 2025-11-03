@@ -140,23 +140,21 @@ let selectedDriverType = "Single Trip";
 function toggleSingleTripFields() {
   const fields = document.querySelectorAll(".single-trip-fields");
 
-  if (
-    selectedDriverType === "Single Trip" ||
-    selectedDriverType === "Corporate Driver"
-  ) {
-    fields.forEach((field) => {
-      field.style.display = "flex";
-      field.required = true;
-    });
-  } else {
-    fields.forEach((field) => {
-      field.style.display = "none";
-      field.required = false; // ✅ remove required when hidden
-    });
-  }
-}
+  fields.forEach((field) => {
+    const inputs = field.querySelectorAll("input");
 
-toggleSingleTripFields();
+    if (
+      selectedDriverType === "Single Trip" ||
+      selectedDriverType === "Corporate Driver"
+    ) {
+      field.style.display = "flex";
+      inputs.forEach((input) => (input.required = true));
+    } else {
+      field.style.display = "none";
+      inputs.forEach((input) => (input.required = false));
+    }
+  });
+}
 
 document.querySelectorAll('input[name="driver_type"]').forEach((radio) => {
   radio.addEventListener("change", (e) => {
@@ -166,12 +164,8 @@ document.querySelectorAll('input[name="driver_type"]').forEach((radio) => {
   });
 });
 
-const form = document.getElementById("bookingForm");
-
-// attach your handler
-handleBookingSubmit(form);
-
 function handleBookingSubmit(form) {
+  toggleSingleTripFields();
   if (!form) return;
 
   form.addEventListener("submit", async (e) => {
@@ -230,7 +224,7 @@ function handleBookingSubmit(form) {
 }
 
 const bookingForm = document.getElementById("bookingForm");
-handleBookingSubmit(bookingForm);
+if (bookingForm) handleBookingSubmit(bookingForm);
 
 const bookingFormMobile = document.getElementById("bookingFormMobile");
 if (bookingFormMobile) handleBookingSubmit(bookingFormMobile);

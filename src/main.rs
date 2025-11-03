@@ -49,7 +49,7 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(|| {
         App::new()
-            .wrap(Logger::default()) // log basic request info
+            .wrap(Logger::default())
             .wrap(Logger::new("%a %{User-Agent}i -> %r %s %b bytes %D ms"))
             .route("/api/booking", web::post().to(handle_booking))
             .service(fs::Files::new("/", "./static").index_file("index.html"))

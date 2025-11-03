@@ -135,14 +135,14 @@ if (faqItems.length > 0) {
 }
 
 // Form Submission
-let selectedDriverType = "single_trip";
+let selectedDriverType = "Single Trip";
 
 function toggleSingleTripFields() {
   const fields = document.querySelectorAll(".single-trip-fields");
 
   if (
-    selectedDriverType === "single_trip" ||
-    selectedDriverType === "corporate"
+    selectedDriverType === "Single Trip" ||
+    selectedDriverType === "Corporate Driver"
   ) {
     fields.forEach((field) => {
       field.style.display = "flex";
@@ -188,7 +188,10 @@ function handleBookingSubmit(form) {
       return;
     }
 
-    if (data.driverType === "single_trip") {
+    if (
+      data.driverType === "Single Trip" ||
+      data.driverType === "Corporate Driver"
+    ) {
       if (
         !data.pickupDate ||
         !data.pickupTime ||
@@ -216,7 +219,7 @@ function handleBookingSubmit(form) {
           "Thank you for your booking request! We will contact you shortly."
         );
         form.reset();
-        selectedDriverType = "single_trip";
+        selectedDriverType = "Single Trip";
         toggleSingleTripFields(); // if defined elsewhere
       } else {
         alert("There was an error submitting your booking. Please try again.");

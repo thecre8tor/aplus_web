@@ -138,19 +138,22 @@ if (faqItems.length > 0) {
 let selectedDriverType = "single_trip";
 
 function toggleSingleTripFields() {
-  const forms = [
-    document.getElementById("bookingForm"),
-    document.getElementById("bookingFormMobile"),
-  ];
-  forms.forEach((form) => {
-    if (form) {
-      const singleTripFields = form.querySelectorAll(".single-trip-fields");
-      singleTripFields.forEach((field) => {
-        field.style.display =
-          selectedDriverType === "single_trip" ? "flex" : "none";
-      });
-    }
-  });
+  const fields = document.querySelectorAll(".single-trip-fields");
+
+  if (
+    selectedDriverType === "single_trip" ||
+    selectedDriverType === "corporate"
+  ) {
+    fields.forEach((field) => {
+      field.style.display = "flex";
+      field.required = true;
+    });
+  } else {
+    fields.forEach((field) => {
+      field.style.display = "none";
+      field.required = false; // ✅ remove required when hidden
+    });
+  }
 }
 
 toggleSingleTripFields();
@@ -163,13 +166,20 @@ document.querySelectorAll('input[name="driverType"]').forEach((radio) => {
   });
 });
 
+const form = document.getElementById("bookingForm");
+
+// attach your handler
+handleBookingSubmit(form);
+
 function handleBookingSubmit(form) {
   if (!form) return;
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    data.driverType = selectedDriverType;
+    // data.driverType = selectedDriverType;
 
     if (!data.name || !data.phone || !data.driverType) {
       alert(
@@ -195,12 +205,19 @@ function handleBookingSubmit(form) {
     console.log("Booking data:", data);
 
     try {
-      const response = await fetch("https://api.example.com/bookings", {
+      const response = await fetch("https://send.api.mailtrap.io/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: "Bearer ",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          from: { email: "hello@aplusdrivers.ng", name: data.driverType },
+          to: [{ email: "aplusdriversng@gmail.com" }],
+          subject: "Booking!",
+          text: JSON.stringify(data, null, 2),
+          category: "Integration Test",
+        }),
       });
 
       if (response.ok) {
@@ -209,7 +226,7 @@ function handleBookingSubmit(form) {
         );
         form.reset();
         selectedDriverType = "single_trip";
-        toggleSingleTripFields();
+        toggleSingleTripFields(); // if defined elsewhere
       } else {
         alert("There was an error submitting your booking. Please try again.");
       }
@@ -221,7 +238,7 @@ function handleBookingSubmit(form) {
 }
 
 const bookingForm = document.getElementById("bookingForm");
-if (bookingForm) handleBookingSubmit(bookingForm);
+handleBookingSubmit(bookingForm);
 
 const bookingFormMobile = document.getElementById("bookingFormMobile");
 if (bookingFormMobile) handleBookingSubmit(bookingFormMobile);

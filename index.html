@@ -56,12 +56,15 @@
             </p>
             <a href="#contact" class="btn">Contact Us →</a>
           </div>
+
+          <!-- [web] Booking form start -->
           <div class="hero-form">
             <h3>Book a Driver</h3>
             <p>
               Please complete the details below, then click on Submit and we
               will be in touch
             </p>
+
             <form id="bookingForm">
               <div class="form-group">
                 <label for="name" style="font-size: 12px">Name*</label>
@@ -73,15 +76,18 @@
                   placeholder="Name*"
                 />
               </div>
+
               <div class="form-group">
                 <label for="email" style="font-size: 12px">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
+                  required
                   placeholder="Email"
                 />
               </div>
+
               <div class="form-group">
                 <label for="phone" style="font-size: 12px">Phone Number*</label>
                 <input
@@ -92,6 +98,7 @@
                   placeholder="Phone Number*"
                 />
               </div>
+
               <div style="margin-bottom: 13px">
                 <div class="form-group">
                   <p style="font-size: 16px; font-weight: 500">I need a</p>
@@ -145,6 +152,7 @@
                   </p>
                 </div>
               </div>
+
               <div class="form-row single-trip-fields">
                 <div style="display: flex; gap: 16px">
                   <div class="form-group" style="width: 50%">
@@ -168,11 +176,11 @@
                       id="pickupTime"
                       name="pickupTime"
                       style="width: 100%"
-                      required
                     />
                   </div>
                 </div>
               </div>
+
               <div class="form-row single-trip-fields" style="display: flex">
                 <div class="form-group">
                   <label for="pickupLocation" style="font-size: 12px"
@@ -185,6 +193,7 @@
                     required
                   />
                 </div>
+
                 <div class="form-group">
                   <label for="dropoffLocation" style="font-size: 12px"
                     >Dropoff Location*</label
@@ -197,6 +206,7 @@
                   />
                 </div>
               </div>
+
               <button
                 type="submit"
                 class="btn"
@@ -206,6 +216,7 @@
               </button>
             </form>
           </div>
+          <!-- [web] Booking form end -->
         </div>
       </div>
     </section>
@@ -235,6 +246,7 @@
           </div>
         </div>
 
+        <!-- [mobile] Booking from end -->
         <div class="hero-form-mobile">
           <h3>Book a Driver</h3>
           <p>
@@ -334,13 +346,13 @@
             <div class="form-row single-trip-fields">
               <div style="display: flex; gap: 16px">
                 <div class="form-group">
-                  <label for="pickupLocation" style="font-size: 12px"
+                  <label for="mobile_pickupLocation" style="font-size: 12px"
                     >Pickup Location*</label
                   >
                   <input
                     type="text"
-                    id="pickupLocation"
-                    name="pickupLocation"
+                    id="mobile_pickupLocation"
+                    name="mobile_pickupLocation"
                     required
                   />
                 </div>
@@ -368,6 +380,7 @@
             </div>
           </form>
         </div>
+        <!-- [mobile] Booking from end -->
 
         <div class="features-section">
           <div class="features-left">
@@ -669,6 +682,7 @@
       </div>
     </footer>
 
+    <script src="assets/javascript/config.js"></script>
     <script src="assets/javascript/main.js"></script>
   </body>
 </html>

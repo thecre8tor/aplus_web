@@ -167,7 +167,7 @@ form {
       #00000066 85%,
       #00000026 100%
     ),
-    url("../../assets/images/services_hero.jpg");
+    url("../images/services_hero.jpg");
   background-size: cover;
   height: 88vh;
   display: flex;

@@ -362,7 +362,7 @@ form {
       #00000066 85%,
       #00000026 100%
     ),
-    url("../../assets/images/hero-image.jpg");
+    url("../images/hero-image.jpg");
   background-size: cover;
   background-position: center;
   height: 79vh;

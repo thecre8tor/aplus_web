@@ -205,19 +205,10 @@ function handleBookingSubmit(form) {
     console.log("Booking data:", data);
 
     try {
-      const response = await fetch("https://send.api.mailtrap.io/api/send", {
+      const response = await fetch("/api/booking", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer ",
-        },
-        body: JSON.stringify({
-          from: { email: "hello@aplusdrivers.ng", name: data.driverType },
-          to: [{ email: "aplusdriversng@gmail.com" }],
-          subject: "Booking!",
-          text: JSON.stringify(data, null, 2),
-          category: "Integration Test",
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {

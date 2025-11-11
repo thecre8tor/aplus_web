@@ -3,6 +3,7 @@ const init = () => {
   const mobileMenuToggle = document.getElementById("mobileMenuToggle");
   const navMenu = document.getElementById("navMenu");
 
+  // Mobile Menu Toggle
   if (mobileMenuToggle && navMenu) {
     mobileMenuToggle.addEventListener("click", () => {
       navMenu.classList.toggle("active");
@@ -336,7 +337,9 @@ const init = () => {
         <img src="${profile.image}" alt="${profile.name}" />
         <h2>${profile.name}</h2>
         <div class="position">${profile.position}</div>
-        <div class="profile-text">${profile.bio || "Profile coming soon..."}</div>
+        <div class="profile-text">${
+          profile.bio || "Profile coming soon..."
+        }</div>
         <div style='display: flex; align-items: center; margin-top: 20px; gap: 6px;'> 
           <button style="background: transparent; border: 1px solid black; font-size: 18px; font-weight:700; padding: 13px 40.5px; border-radius: 52px; cursor: pointer;">Find out more</button>
           <button style="background: #004A97; border: none; font-size: 18px; font-weight:700; padding: 13px 40.5px; border-radius: 52px; color: #fff; cursor: pointer; display: flex; gap: 12px; align-items: center;">
@@ -391,5 +394,3 @@ if (document.readyState === "loading") {
 } else {
   init();
 }
-
-

@@ -315,12 +315,15 @@ const init = () => {
         position: "Founder and CEO",
         image: "./assets/images/michael_akpan.png",
         bio: `As the Founder and CEO of A Plus Drivers (RAD Transport Services), Michael Akpan brings a wealth of experience in strategy development and execution, leadership and sales expertise.<br><br> With a proven track record across various leadership roles, including Head of Strategy and Customer Lifecycle Management at Keeon Oil, Michael excels in driving business growth and addressing complex challenges.<br><br> Michael holds a Bachelor of Science degree in Political Science from the University of Lagos (Unilag).<br><br> His passion lies in developing future leaders with strong strategic thinking and sales sector expertise.<br><br> Under Michael’s leadership, A Plus Drivers (RAD Transport Services) is poised for continued growth and success, driven by innovative strategies and a commitment to excellence.`,
+        linkedin:
+          "https://www.linkedin.com/in/michael-akpan-bsc-acipm-3b52b6122/",
       },
       "tobi-amida": {
         name: "Tobi Amida",
         position: "Board Chairman",
         image: "./assets/images/tobi_amida.png",
         bio: `Tobi Amida is an experienced strategist, transformation leader, and educator specializing in Strategy, Leadership, and Banking. He has demonstrated success in strategy development and execution across various leadership roles.<br><br> His roles include Director at Aella Financial Solution with oversight over the Microfinance Bank, Head of Strategy/Customer Lifecycle Management at Smartcash PSB/Airtel Subsidiary, and Head, Strategy and Research at Nigeria Inter-Bank Settlement Systems PLC.<br><br> With a background in consulting with the Management Consulting arm of KPMG Professional Services, Tobi combines academic knowledge with practical experience to address complex business challenges with actionable strategies.<br><br> Tobi is proficient in strategy formulation, project execution,financial analysis, and product management. He is passionate about developing future leaders with strong strategic thinking and banking sector expertise.<br><br> He has delivered lectures for Talstack, a leading education platform on topics ranging from Design and Execute Corporate and Functional Strategies and Manage Cross-functional Teams.<br><br> He holds a B.Sc. in Agricultural Engineering from Obafemi Awolowo University.`,
+        linkedin: "https://www.linkedin.com/in/tobi-a-886701b/",
       },
     };
 
@@ -336,13 +339,15 @@ const init = () => {
           profile.bio || "Profile coming soon..."
         }</div>
         <div style='display: flex; align-items: center; margin-top: 20px; gap: 6px;'> 
-          <button style="background: transparent; border: 1px solid black; font-size: 18px; font-weight:700; padding: 13px 40.5px; border-radius: 52px; cursor: pointer;">Find out more</button>
-          <button style="background: #004A97; border: none; font-size: 18px; font-weight:700; padding: 13px 40.5px; border-radius: 52px; color: #fff; cursor: pointer; display: flex; gap: 12px; align-items: center;">
+          <!-- <button style="background: transparent; border: 1px solid black; font-size: 18px; font-weight:700; padding: 13px 40.5px; border-radius: 52px; cursor: pointer;">Find out more</button> -->
+          <a href="${
+            profile.linkedin
+          }" target="_blank" style="background: #004A97; border: none; font-size: 18px; font-weight:700; padding: 13px 40.5px; border-radius: 52px; color: #fff; cursor: pointer; display: flex; gap: 12px; align-items: center;">
             <div style="width: 24px; height: 24px;">
               <img src="./assets/images/linkedin_icon.png" style="width: 100%;"/>
             </div>
             <p>Find me on LinkedIn</p>
-          </button>
+          </a>
         </div>
       `;
 

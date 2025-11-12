@@ -47,7 +47,7 @@ The booking form can post to an external API configured via environment variable
 cp .env.example .env
 ```
 
-Set `VITE_BOOKING_API_URL` to the fully qualified URL of the booking endpoint. When not set, the site submits to `/api/booking`.
+Set `VITE_BOOKING_API_URL` to the fully qualified URL of the booking endpoint and `VITE_CONTACT_API_URL` for contact messages. When not set, the site submits to `/api/booking` and `/api/contact` respectively.
 
 ## Deployment
 

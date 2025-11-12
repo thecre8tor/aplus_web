@@ -103,8 +103,9 @@
             </div>
           </div>
         </div>
+
         <div class="contact-right">
-          <form class="form">
+          <form class="form" id="contactForm">
             <h2>Send Us a Message</h2>
             <p>
               Fill out the form below and we’ll get back to you as soon as
@@ -112,22 +113,24 @@
             </p>
             <div class="form-group">
               <div>
-                <label for="Full Name" style="font-size: 12px"
+                <label for="contact_full_name" style="font-size: 12px"
                   >Full Name *</label
                 >
                 <input
                   type="text"
-                  id="fullName"
-                  name="fullName"
+                  id="contact_full_name"
+                  name="full_name"
                   required
                   placeholder="Enter your name"
                 />
               </div>
               <div>
-                <label for="Email" style="font-size: 12px">Email *</label>
+                <label for="contact_email" style="font-size: 12px"
+                  >Email *</label
+                >
                 <input
                   type="email"
-                  id="email"
+                  id="contact_email"
                   name="email"
                   required
                   placeholder="Enter your email"
@@ -136,34 +139,43 @@
             </div>
             <div class="form-group">
               <div class="form-flex">
-                <label for="Full Name" style="font-size: 12px"
+                <label for="contact_phone" style="font-size: 12px"
                   >Phone Number</label
                 >
                 <input
-                  type="text"
-                  id="phone number"
-                  name="phone number"
-                  required
-                  placeholder="Enter your name"
+                  type="tel"
+                  id="contact_phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
                 />
               </div>
               <div class="form-flex">
-                <label for="Email" style="font-size: 12px">Category *</label>
-                <input
-                  type="text"
-                  id="category"
+                <label for="contact_category" style="font-size: 12px"
+                  >Category *</label
+                >
+                <select
+                  id="contact_category"
                   name="category"
                   required
-                  placeholder="Select a category"
-                />
+                  aria-label="Select inquiry category"
+                >
+                  <option value="" disabled selected>Select a category</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Corporate Services">Corporate Services</option>
+                  <option value="Partnerships">Partnerships</option>
+                  <option value="Support">Support</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
               <div style="width: 100%">
-                <label for="Email" style="font-size: 12px">Subject *</label>
+                <label for="contact_subject" style="font-size: 12px"
+                  >Subject *</label
+                >
                 <input
                   type="text"
-                  id="subject"
+                  id="contact_subject"
                   name="subject"
                   required
                   placeholder="Brief description of your inquiry"
@@ -172,21 +184,27 @@
             </div>
             <div class="form-group">
               <div style="width: 100%">
-                <label for="Email" style="font-size: 12px">Message *</label>
+                <label for="contact_message" style="font-size: 12px"
+                  >Message *</label
+                >
                 <textarea
                   name="message"
-                  id="message"
+                  id="contact_message"
                   placeholder="Please provide details about your inquiry..."
                   rows="3"
+                  required
                 ></textarea>
               </div>
             </div>
 
-            <a href="#" class="btn" style="margin-top: 16px">Contact Us →</a>
+            <button type="submit" class="btn" style="margin-top: 16px">
+              Send Message →
+            </button>
           </form>
         </div>
       </section>
     </main>
+
     <!-- Footer -->
     <footer class="footer" id="contact">
       <div class="container">

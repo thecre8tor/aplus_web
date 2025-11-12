@@ -128,6 +128,8 @@ const init = () => {
 
   const bookingEndpoint =
     import.meta.env.VITE_BOOKING_API_URL || "/api/booking";
+  const contactEndpoint =
+    import.meta.env.VITE_CONTACT_API_URL || "/api/contact";
 
   const toggleSingleTripFields = () => {
     const fields = document.querySelectorAll(".single-trip-fields");
@@ -233,6 +235,57 @@ const init = () => {
   handleBookingSubmit(bookingFormMobile);
 
   toggleSingleTripFields();
+
+  const handleContactSubmit = (form) => {
+    if (!form) return;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (!submitBtn) return;
+
+      const originalContent = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span class="loader"></span>`;
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      if (!data.full_name || !data.email || !data.subject || !data.message) {
+        alert("Please complete all required fields before submitting.");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalContent;
+        return;
+      }
+
+      try {
+        const response = await fetch(contactEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          alert("Thank you for reaching out! We will get back to you soon.");
+          form.reset();
+        } else {
+          alert(
+            "There was an error submitting your message. Please try again later."
+          );
+        }
+      } catch (error) {
+        console.error("Contact form error:", error);
+        alert("There was a network error. Please try again.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalContent;
+      }
+    });
+  };
+
+  const contactForm = document.getElementById("contactForm");
+  handleContactSubmit(contactForm);
 
   // Smooth Scrolling
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

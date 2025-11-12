@@ -125,6 +125,7 @@ const init = () => {
 
   // Booking Form Submission
   let selectedDriverType = "Single Trip";
+
   const bookingEndpoint =
     import.meta.env.VITE_BOOKING_API_URL || "/api/booking";
 
@@ -134,10 +135,7 @@ const init = () => {
     fields.forEach((field) => {
       const inputs = field.querySelectorAll("input");
 
-      if (
-        selectedDriverType === "Single Trip" ||
-        selectedDriverType === "Corporate Driver"
-      ) {
+      if (selectedDriverType === "Single Trip") {
         field.style.display = "flex";
         inputs.forEach((input) => {
           input.required = true;
@@ -183,10 +181,7 @@ const init = () => {
         return;
       }
 
-      if (
-        data.driver_type === "Single Trip" ||
-        data.driver_type === "Corporate Driver"
-      ) {
+      if (data.driver_type === "Single Trip") {
         if (
           !data.pickup_date ||
           !data.pickup_time ||
